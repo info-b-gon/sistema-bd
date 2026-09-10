@@ -115,8 +115,7 @@ select c.nome, count(r) from cliente c join reserva r on c.id=r.id_cliente group
 
 select p.nome, count(c) from passeio p join reserva_passeio rp on p.id=rp.id_passeio join reserva r on rp.id_reserva=r.id join cliente c on r.id_cliente=c.id
 group by p.nome order by c.count desc;
--- Mostre o nome de cada passeio e a quantidade de clientes associados a ele. Utilize COUNT(), INNER JOIN, GROUP
--- BY e ORDER BY, ordenando do maior para o menor. (1,5)
+-- Mostre o nome de cada passeio e a quantidade de clientes associados a ele.
 
 -- DESAFIO FINAL-------------
 --Crie uma consulta que apresente: nome do cliente, e-mail, código da reserva, status, nome do passeio, data e hora
