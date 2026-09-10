@@ -117,8 +117,9 @@ select p.nome, count(c) from passeio p join reserva_passeio rp on p.id=rp.id_pas
 group by p.nome order by c.count desc;
 -- Mostre o nome de cada passeio e a quantidade de clientes associados a ele.
 
--- DESAFIO FINAL-------------
+select c.nome, c.email, r.id, r.status, p.nome, p.data_hora_saida, p.data_hora_retorno, p.duracao_horas from cliente c 
+join reserva r on c.id=r.id_cliente join reserva_passeio rp on r.id=rp.id_reserva join passeio p on rp.id_passeio=p.id
+where r.status='CONFIRMADA' and p.duracao_horas>=8 order by (c.nome, p.data_Hora_saida);
 --Crie uma consulta que apresente: nome do cliente, e-mail, código da reserva, status, nome do passeio, data e hora
 --de saída, data e hora de retorno e duração em horas. Considere somente reservas CONFIRMADAS e passeios com
 --duracao_horas >= 8. Ordene primeiro pelo nome do cliente e depois pela data e hora de saída do passeio.
-	
